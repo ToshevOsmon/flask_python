@@ -1,25 +1,10 @@
 import requests
 from flask import json
-print("import flask")
-
 import env_vars1
 
-print("import env_vars1")
-
-print("Countries.py file opened")
-
 def get_country(country_name):
-    
-    print("get_country_info function running")
-    
     try:
-    
-        print("try is run")
-    
         response = requests.get(f"{env_vars1.COUNTRY_API}/v3.1/name/{country_name}?fullText=true")
-    
-        print("responce is unswer")
-    
         data=response.json()
         results = {
             "name": data[0]["name"]["common"],
