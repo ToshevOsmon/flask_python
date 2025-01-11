@@ -3,7 +3,7 @@ from flask import json
 import env_vars
 
 
-def get_county_info(country_name):
+def get_country_info(country_name):
     try:
         response = requests.get(f"{env_vars.COUNTRY_API}/v3.1/name/{country_name}?fullText=true")
         data=response.json()
